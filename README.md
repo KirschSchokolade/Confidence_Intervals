@@ -57,6 +57,8 @@ server <- function(input, output) {
   })
 }
 
-
-## basic example code
+# Run the app ----
+shinyApp(ui = ui, server = server)
 ```
+
+<div style="width: 100% ; height: 400px ; text-align: center; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;" class="muted well">Shiny applications not supported in static R Markdown documents</div>
