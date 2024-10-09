@@ -3,7 +3,7 @@
     "path": "~/Documents/Meschede/JavaScript_for_r/myCharts/README.Rmd",
     "project_path": "README.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "1956286334",
     "contents": "",
     "dirty": false,
     "created": 1728475872584.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "62,2",
+        "cursorPosition": "58,13",
         "scrollLine": "45"
     },
     "folds": "",
-    "lastKnownWriteTime": 1728476679,
+    "lastKnownWriteTime": 1728476753,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1728476679310,
+    "last_content_update": 1728476753399,
     "read_only": false,
     "read_only_alternatives": []
 }
