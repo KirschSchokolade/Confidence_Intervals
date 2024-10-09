@@ -1,0 +1,14 @@
+Package: myCharts
+Type: Package
+Title: Confidence Intervals with Chartjs
+Version: 0.1.0
+Author: Sebastian Krause
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: Provides a specific wrapper for the chart.js library specially to 
+    create confidence intervals.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    htmlwidgets
+RoxygenNote: 7.3.1
