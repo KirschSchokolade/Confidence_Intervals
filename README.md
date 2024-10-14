@@ -31,7 +31,7 @@ This is a basic example which shows you how to add a chartjs chart to
 your shiny app:
 
 ``` r
-library(myCharts)
+library(ConfidenceIntervals)
 library(shiny)
 library(bslib)
 #> 
@@ -50,12 +50,12 @@ ui <- page_fluid(
 )
 
 server <- function(input, output) {
-  output$testchart <- renderMyCharts({
+  output$testchart <- renderConfidenceIntervals({
 
     # The  widget
     ConfidenceIntervals(insertion_type = "OnlyIntervals", chart_data = c(5,5,5,5), 
              top_band= c(6,6,6,6), bottom_band = c(4,4,4,4), 
-                 labels= c("Eins", "zwei", "drei", "vier", "sechs"))
+                labels= c("Eins", "zwei", "drei", "vier", "sechs"))
   })
 }
 

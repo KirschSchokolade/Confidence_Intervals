@@ -38,7 +38,7 @@ pak::pak("KirschSchokolade/Confidence_Intervals")
 This is a basic example which shows you how to add a chartjs chart to your shiny app:
 
 ```{r example}
-library(myCharts)
+library(ConfidenceIntervals)
 library(shiny)
 library(bslib)
 
