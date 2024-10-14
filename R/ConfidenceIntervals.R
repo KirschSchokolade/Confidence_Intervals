@@ -1,6 +1,15 @@
-#' <Add Title>
+#' Creates a new html widget which wraps a chartjs chart instance.
 #'
-#' <Add Description>
+#'
+#'
+#' @param insertion_type How the confidence intervals are constructed
+#' @param chart_data The data for the point forecast
+#' @param top_band The data for the upper bound
+#' @param bottom_band The data for the lower bound
+#' @param labels the labels for the data. Displayed on the x-axis.
+#' @param width width of the widget
+#' @param height heigth of the widget
+#' @param elementId The html id of the chart.
 #'
 #' @import htmlwidgets
 #'
