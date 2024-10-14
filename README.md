@@ -45,7 +45,7 @@ library(bslib)
 ui <- page_fluid(
   titlePanel("Chartjs Widget"),
   mainPanel(
-    card(MyChartsOutput("testchart")),
+    card(ConfidenceIntervalsOutput("testchart")),
   )
 )
 
@@ -53,8 +53,9 @@ server <- function(input, output) {
   output$testchart <- renderMyCharts({
 
     # The  widget
-    MyCharts(insertion_type = "OnlyIntervals", chart_data = c(5,5,5,5), 
-             top_band= c(6,6,6,6), bottom_band = c(4,4,4,4), labels= c("Eins", "zwei", "drei", "vier", "sechs"))
+    ConfidenceIntervals(insertion_type = "OnlyIntervals", chart_data = c(5,5,5,5), 
+             top_band= c(6,6,6,6), bottom_band = c(4,4,4,4), 
+                 labels= c("Eins", "zwei", "drei", "vier", "sechs"))
   })
 }
 
