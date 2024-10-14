@@ -1,1 +1,1 @@
-import './widgets/MyCharts.js'
+import './widgets/ConfidenceIntervals.js'

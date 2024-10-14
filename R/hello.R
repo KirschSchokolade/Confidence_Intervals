@@ -5,31 +5,31 @@ library(bslib)
 ui <- page_fluid(
   titlePanel("Chartjs Widget"),
   mainPanel(
-    card(MyChartsOutput("HILF_MIR")),
-    card(MyChartsOutput("testing")),
-    card(MyChartsOutput("blabla")),
+    card(ConfidenceIntervalsOutput("HILF_MIR")),
+    card(ConfidenceIntervalsOutput("testing")),
+    card(ConfidenceIntervalsOutput("blabla")),
 
   )
 )
 
 # Define server logic ----
 server <- function(input, output) {
-  output$HILF_MIR <- renderMyCharts({
+  output$HILF_MIR <- renderConfidenceIntervals({
 
-    # The MyCharts widget
-    MyCharts(insertion_type = "OnlyIntervals", chart_data = c(5,5,5,5), top_band= c(6,6,6,6), bottom_band = c(4,4,4,4), labels= c("Eins", "zwei", "drei", "vier", "sechs"))
+    # The widget
+    ConfidenceIntervals(insertion_type = "OnlyIntervals", chart_data = c(5,5,5,5), top_band= c(6,6,6,6), bottom_band = c(4,4,4,4), labels= c("Eins", "zwei", "drei", "vier", "sechs"))
   })
 
-  output$testing <- renderMyCharts({
+  output$testing <- renderConfidenceIntervals({
 
-    # The MyCharts widget
-    MyCharts(insertion_type = "PointForecastFirst", chart_data = c(5,5,5,5), top_band= c(6,6,6,6), bottom_band = c(4,4,4,4), labels= c("Eins", "zwei", "drei", "vier", "sechs"))
+    # The widget
+    ConfidenceIntervals(insertion_type = "PointForecastFirst", chart_data = c(5,5,5,5), top_band= c(6,6,6,6), bottom_band = c(4,4,4,4), labels= c("Eins", "zwei", "drei", "vier", "sechs"))
   })
 
-  output$blabla <- renderMyCharts({
+  output$blabla <- renderConfidenceIntervals({
 
-    # The MyCharts widget
-    MyCharts(insertion_type = "IntervalFirst", chart_data = c(5,5,5,5), top_band= c(6,6,6,6), bottom_band = c(4,4,4,4), labels= c("Eins", "zwei", "drei", "vier", "sechs"))
+    # The widget
+    ConfidenceIntervals(insertion_type = "IntervalFirst", chart_data = c(5,5,5,5), top_band= c(6,6,6,6), bottom_band = c(4,4,4,4), labels= c("Eins", "zwei", "drei", "vier", "sechs"))
   })
 
 }

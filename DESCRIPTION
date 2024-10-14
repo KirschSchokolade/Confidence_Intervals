@@ -1,4 +1,4 @@
-Package: myCharts
+Package: ConfidenceIntervals
 Type: Package
 Title: Confidence Intervals with Chartjs
 Version: 0.1.0

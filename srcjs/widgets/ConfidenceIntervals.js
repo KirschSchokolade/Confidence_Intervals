@@ -8,7 +8,7 @@ import zoomPlugin from 'chartjs-plugin-zoom';
 
 HTMLWidgets.widget({
 
-  name: 'MyCharts',
+  name: 'ConfidenceIntervals',
 
   type: 'output',
 
