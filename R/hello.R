@@ -1,5 +1,5 @@
 library(shiny)
-# library(ConfidenceIntervals)
+library(ConfidenceIntervals)
 library(bslib)
 
 ui <- page_fluid(
