@@ -44,7 +44,7 @@ library(bslib)
 
 
 
-ui <- page_fluid(
+ui <- bslib::page_fluid(
   titlePanel("Chartjs Widget"),
   mainPanel(
     card(ConfidenceIntervalsOutput("testchart")),

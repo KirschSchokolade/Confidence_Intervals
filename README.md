@@ -34,15 +34,9 @@ your shiny app:
 library(ConfidenceIntervals)
 library(shiny)
 library(bslib)
-#> 
-#> Attaching package: 'bslib'
-#> The following object is masked from 'package:utils':
-#> 
-#>     page
 
 
-
-ui <- page_fluid(
+ui <- bslib::page_fluid(
   titlePanel("Chartjs Widget"),
   mainPanel(
     card(ConfidenceIntervalsOutput("testchart")),
