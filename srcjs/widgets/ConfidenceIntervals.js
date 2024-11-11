@@ -24,17 +24,17 @@ HTMLWidgets.widget({
     var counter = 0;
     var last_main_value = 0
     let canvas = $(el)
-
     let label_len = x.labels.length;
 
     let data = {
       labels: x.labels,
-      datasets: [{
+      datasets: [
+        {
           label: 'Book Sales',
           type: "line",
           data: x.chart_data,
           fill: false,
-          borderColor: '#70017c',
+          borderColor: x.color,
           tension: 0,
           yAxisID: 'y'
       },
@@ -60,6 +60,7 @@ HTMLWidgets.widget({
               yAxisID: 'y',
               xAxisID: 'x',
           }
+
       ]
   };
 
