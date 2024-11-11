@@ -88,6 +88,7 @@ HTMLWidgets.widget({
             chart.update()
         },
         plugins: {
+            legend : x.show_legend,
             dragData: {
                 round: 1,
                 showTooltip: true,

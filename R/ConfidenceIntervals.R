@@ -14,12 +14,15 @@
 #' @import htmlwidgets
 #'
 #' @export
-ConfidenceIntervals <- function(insertion_type = "PointForecastFirst", chart_data, top_band, bottom_band,labels, width = NULL, height = NULL, elementId = NULL, color_main = NULL, color_top = NULL, color_bottom = NULL) {
+ConfidenceIntervals <- function(insertion_type = "PointForecastFirst", chart_data, top_band, bottom_band,labels = NULL, width = NULL, height = NULL, elementId = NULL, color_main = NULL, color_top = NULL, color_bottom = NULL, show_legend = TRUE) {
   if (is.null(top_band))
   {
     top_band <- chart_data
   }
-
+  if (is.null(labels))
+  {
+    labels <- c()
+  }
   if (is.null(bottom_band))
   {
     bottom_band <- chart_data
@@ -46,7 +49,8 @@ ConfidenceIntervals <- function(insertion_type = "PointForecastFirst", chart_dat
     labels = labels,
     color_main = color_main,
     color_top = color_top,
-    color_bottom = color_bottom
+    color_bottom = color_bottom,
+    show_legend = show_legend
   )
 
   # create widget
