@@ -14,7 +14,7 @@
 #' @import htmlwidgets
 #'
 #' @export
-ConfidenceIntervals <- function(insertion_type = "PointForecastFirst", chart_data, top_band, bottom_band,labels, width = NULL, height = NULL, elementId = NULL, color) {
+ConfidenceIntervals <- function(insertion_type = "PointForecastFirst", chart_data, top_band, bottom_band,labels, width = NULL, height = NULL, elementId = NULL, color_main = NULL, color_top = NULL, color_bottom = NULL) {
   if (is.null(top_band))
   {
     top_band <- chart_data
@@ -24,10 +24,18 @@ ConfidenceIntervals <- function(insertion_type = "PointForecastFirst", chart_dat
   {
     bottom_band <- chart_data
   }
-  if (is.null(color))
+  if (is.null(color_main))
   {
-    color <- "#000000"
-    }
+    color_main <- "#000000"
+  }
+  if (is.null(color_top))
+  {
+    color_top <- "#000000"
+  }
+  if (is.null(color_bottom))
+  {
+    color_bottom <- "#000000"
+  }
 
   # forward options using x
   x = list(
@@ -36,7 +44,9 @@ ConfidenceIntervals <- function(insertion_type = "PointForecastFirst", chart_dat
     top_band = top_band,
     bottom_band = bottom_band,
     labels = labels,
-    color = color
+    color_main = color_main,
+    color_top = color_top,
+    color_bottom = color_bottom
   )
 
   # create widget
