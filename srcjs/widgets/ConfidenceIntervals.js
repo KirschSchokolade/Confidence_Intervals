@@ -25,6 +25,8 @@ HTMLWidgets.widget({
     var last_main_value = 0
     let canvas = $(el)
     let label_len = x.labels.length;
+    var old_value = 0;
+
 
     let data = {
       labels: x.labels,
@@ -94,8 +96,23 @@ HTMLWidgets.widget({
                 showTooltip: true,
                 onDragStart: (e, datasetIndex, index, value) => {
                     //
+                    console.log(e);
+                    console.log(e.cancelable);
+
+                    if (index < start_length)
+                    {
+                      old_value = value;
+                      return ;
+                    }
                 },
                 onDragEnd: function (e, datasetIndex, index, value) {
+                     if (index < start_length)
+                    {
+
+                      data.datasets[datasetIndex].data[index] = old_value;
+                      chart.update()
+                      return ;
+                    }
                     e.target.style.cursor = 'default';
                     return_data_points_to_server(x.insertion_type)
                 }
