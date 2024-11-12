@@ -108,7 +108,6 @@ HTMLWidgets.widget({
                 onDragEnd: function (e, datasetIndex, index, value) {
                      if (index < start_length)
                     {
-
                       data.datasets[datasetIndex].data[index] = old_value;
                       chart.update()
                       return ;
