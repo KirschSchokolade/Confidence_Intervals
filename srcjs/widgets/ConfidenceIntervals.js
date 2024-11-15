@@ -27,7 +27,6 @@ HTMLWidgets.widget({
     let label_len = x.labels.length;
     var old_value = 0;
 
-
     let data = {
       labels: x.labels,
       datasets: [
@@ -140,8 +139,8 @@ HTMLWidgets.widget({
             y: {
                 // The axis for this scale is determined from the first letter of the id as `'x'`
                 // It is recommended to specify `position` and / or `axis` explicitly.
-                min:0,
-                max: Math.round(Math.max(...x.top_band) + (Math.max(...x.top_band) * 0.1)) ,
+                min:x.axis_limits[0],
+                max: x.axis_limits[1],
                 type: 'linear'
             }
         }
