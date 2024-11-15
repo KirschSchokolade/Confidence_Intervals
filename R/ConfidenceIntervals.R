@@ -15,7 +15,7 @@
 #'
 #' @export
 ConfidenceIntervals <- function(insertion_type = "PointForecastFirst", chart_data, top_band, bottom_band,labels = NULL, width = NULL, height = NULL, elementId = NULL, color_main = NULL, color_top = NULL, color_bottom = NULL, show_legend = TRUE,
-                              show_tooltip = TRUE  )
+                              show_tooltip = TRUE, background_color = "#000000"  )
   {
   if (is.null(top_band))
   {
@@ -53,7 +53,8 @@ ConfidenceIntervals <- function(insertion_type = "PointForecastFirst", chart_dat
     color_top = color_top,
     color_bottom = color_bottom,
     show_legend = show_legend,
-    show_tooltip = show_tooltip
+    show_tooltip = show_tooltip,
+    background_color = background_color
   )
 
   # create widget

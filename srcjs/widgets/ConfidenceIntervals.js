@@ -43,7 +43,6 @@ HTMLWidgets.widget({
           {
               label: "BandTop",
               type: "line",
-              backgroundColor: "rgb(75, 192, 255, 0.5)",
               borderColor: x.color_top,
               fill: +1,
               tension: 0,
@@ -54,7 +53,7 @@ HTMLWidgets.widget({
           {
               label: "BandBottom",
               type: "line",
-              backgroundColor: "rgb(75, 192, 255, 0.5)",
+              backgroundColor: x.background_color,
               borderColor: x.color_bottom,
               fill: +1,
               tension: 0,
