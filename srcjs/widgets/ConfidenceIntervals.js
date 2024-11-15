@@ -90,23 +90,26 @@ HTMLWidgets.widget({
             chart.update()
         },
         plugins: {
-            legend : x.show_legend,
+            legend : {
+              display: x.show_legend
+
+            },
+            tooltip: {
+              enabled: x.show_tooltip
+            },
             dragData: {
                 round: 1,
                 showTooltip: true,
                 onDragStart: (e, datasetIndex, index, value) => {
                     //
-                    console.log(e);
-                    console.log(e.cancelable);
-
-                    if (index < start_length)
+                    if (index <= start_length)
                     {
                       old_value = value;
                       return ;
                     }
                 },
                 onDragEnd: function (e, datasetIndex, index, value) {
-                     if (index < start_length)
+                     if (index <= start_length)
                     {
                       data.datasets[datasetIndex].data[index] = old_value;
                       chart.update()
