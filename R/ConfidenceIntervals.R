@@ -14,7 +14,7 @@
 #' @import htmlwidgets
 #'
 #' @export
-ConfidenceIntervals <- function(insertion_type = "PointForecastFirst", chart_data, top_band, bottom_band,labels = NULL, width = NULL, height = NULL, elementId = NULL, color_main = NULL, color_top = NULL, color_bottom = NULL, show_legend = TRUE,
+ConfidenceIntervals <- function(insertion_type = c("PointForecastFirst", "PointForecastFirst", "OnlyIntervals")[1], chart_data, top_band, bottom_band,labels = NULL, width = NULL, height = NULL, elementId = NULL, color_main = NULL, color_top = NULL, color_bottom = NULL, show_legend = TRUE,
                               show_tooltip = TRUE, background_color = "#000000" , axis_limits = NULL )
   {
   if (is.null(top_band))

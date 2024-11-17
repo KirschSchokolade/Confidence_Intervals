@@ -99,15 +99,19 @@ HTMLWidgets.widget({
                 round: 1,
                 showTooltip: true,
                 onDragStart: (e, datasetIndex, index, value) => {
+                  console.log("Index:")
+                  console.log(index)
+                  console.log("start_length")
+                  console.log(start_length)
                     //
-                    if (index <= start_length)
+                    if (index < start_length)
                     {
                       old_value = value;
                       return ;
                     }
                 },
                 onDragEnd: function (e, datasetIndex, index, value) {
-                     if (index <= start_length)
+                     if (index < start_length)
                     {
                       data.datasets[datasetIndex].data[index] = old_value;
                       chart.update()
