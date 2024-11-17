@@ -41,6 +41,7 @@ ui <- bslib::page_fluid(
   titlePanel("Chartjs Widget"),
   mainPanel(
     card(ConfidenceIntervalsOutput("testchart")),
+    card(ConfidenceIntervalsOutput("simpleChart"))
   )
 )
 
@@ -51,6 +52,16 @@ server <- function(input, output) {
     ConfidenceIntervals(insertion_type = "OnlyIntervals",
                         axis_limits = c(1,9),show_legend= FALSE, show_tooltip = FALSE, background_color = "#0466f9",
                         color_main = "#E11313", chart_data = c(5,3,5,6), top_band= c(6,6,6,6), bottom_band = c(4,4,4,4), labels= c("Eins", "zwei", "drei", "vier", "sechs"))
+  })
+  
+# This is the most basic way to create a new chart.
+  output$simpleChart <- renderConfidenceIntervals({
+
+    ConfidenceIntervals(
+                        chart_data = c(10,11,12,13,14,15),
+                        top_band = c(15,16,17,18,19,20),
+                        bottom_band = c(5,6,7,8,9,10),
+                        labels= c(1,2,3,4,5,6,7,8,9,10))
   })
 }
 

@@ -6,15 +6,29 @@ ui <- page_fluid(
   titlePanel("Chartjs Widget"),
   mainPanel(
     card(ConfidenceIntervalsOutput("HILF_MIR")),
-    card(ConfidenceIntervalsOutput("testing")),
-    card(ConfidenceIntervalsOutput("blabla")),
+    card(ConfidenceIntervalsOutput("basicChart")),
+    card(
+      card_header(
+        "This is the most basic chart one can create"
+      ),
+      ConfidenceIntervalsOutput("simpleChart")
+      )
+
   )
 )
 
 # Define server logic ----
 server <- function(input, output) {
-  output$HILF_MIR <- renderConfidenceIntervals({
 
+  # This is the simplest way of creating a functioning chart.
+  output$simpleChart <- renderConfidenceIntervals({
+    ConfidenceIntervals(
+      chart_data = c(10,11,12,13,14,15),
+      labels= c(1,2,3,4,5,6,7,8,9,10))
+
+  })
+
+  output$HILF_MIR <- renderConfidenceIntervals({
     # The widget
     ConfidenceIntervals(insertion_type = "OnlyIntervals",
                         axis_limits = c(1,9),show_legend= FALSE, show_tooltip = FALSE, background_color = "#0466f9",
@@ -22,6 +36,16 @@ server <- function(input, output) {
   })
 
 
+  # This is the most basic way to create a new chart.
+  output$basicChart <- renderConfidenceIntervals({
+
+    ConfidenceIntervals(
+                        main_name = "Book Sales",
+                        chart_data = c(10,11,12,13,14,15),
+                        top_band = c(15,16,17,18,19,20),
+                        bottom_band = c(5,6,7,8,9,10),
+                        labels= c(1,2,3,4,5,6,7,8,9,10))
+  })
 }
 
 # Run the app ----

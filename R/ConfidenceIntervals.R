@@ -14,8 +14,8 @@
 #' @import htmlwidgets
 #'
 #' @export
-ConfidenceIntervals <- function(insertion_type = c("PointForecastFirst", "PointForecastFirst", "OnlyIntervals")[1], chart_data, top_band, bottom_band,labels = NULL, width = NULL, height = NULL, elementId = NULL, color_main = NULL, color_top = NULL, color_bottom = NULL, show_legend = TRUE,
-                              show_tooltip = TRUE, background_color = "#000000" , axis_limits = NULL )
+ConfidenceIntervals <- function(insertion_type = c("PointForecastFirst", "PointForecastFirst", "OnlyIntervals")[1], chart_data, top_band = NULL, bottom_band = NULL,labels = NULL, width = NULL, height = NULL, elementId = NULL, color_main = NULL, color_top = NULL, color_bottom = NULL, show_legend = TRUE,
+                              show_tooltip = TRUE, background_color = "#ffffff" , axis_limits = NULL, main_name = "Main", upper_name = "Upper Boundary", lower_name = "Lower Boundary" )
   {
   if (is.null(top_band))
   {
@@ -60,7 +60,10 @@ ConfidenceIntervals <- function(insertion_type = c("PointForecastFirst", "PointF
     show_legend = show_legend,
     show_tooltip = show_tooltip,
     background_color = background_color,
-    axis_limits = axis_limits
+    axis_limits = axis_limits,
+    main_name = main_name,
+    upper_name = upper_name,
+    lower_name = lower_name
   )
 
   # create widget

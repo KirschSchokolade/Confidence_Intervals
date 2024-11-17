@@ -31,7 +31,7 @@ HTMLWidgets.widget({
       labels: x.labels,
       datasets: [
         {
-          label: 'Book Sales',
+          label: x.main_name,
           type: "line",
           data: x.chart_data,
           fill: false,
@@ -40,7 +40,7 @@ HTMLWidgets.widget({
           yAxisID: 'y'
       },
           {
-              label: "BandTop",
+              label: x.upper_name,
               type: "line",
               borderColor: x.color_top,
               fill: +1,
@@ -50,7 +50,7 @@ HTMLWidgets.widget({
               xAxisID: 'x'
           },
           {
-              label: "BandBottom",
+              label: x.lower_name,
               type: "line",
               backgroundColor: x.background_color,
               borderColor: x.color_bottom,
