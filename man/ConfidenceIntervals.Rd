@@ -5,14 +5,21 @@
 \title{Creates a new html widget which wraps a chartjs chart instance.}
 \usage{
 ConfidenceIntervals(
-  insertion_type = "PointForecastFirst",
+  insertion_type = c("PointForecastFirst", "PointForecastFirst", "OnlyIntervals")[1],
   chart_data,
   top_band,
   bottom_band,
-  labels,
+  labels = NULL,
   width = NULL,
   height = NULL,
-  elementId = NULL
+  elementId = NULL,
+  color_main = NULL,
+  color_top = NULL,
+  color_bottom = NULL,
+  show_legend = TRUE,
+  show_tooltip = TRUE,
+  background_color = "#000000",
+  axis_limits = NULL
 )
 }
 \arguments{

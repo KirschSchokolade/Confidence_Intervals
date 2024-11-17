@@ -36,6 +36,7 @@ library(shiny)
 library(bslib)
 
 
+
 ui <- bslib::page_fluid(
   titlePanel("Chartjs Widget"),
   mainPanel(
@@ -56,3 +57,16 @@ server <- function(input, output) {
 # Run the app ----
 # shinyApp(ui = ui, server = server)
 ```
+
+The following block explains the parameters which were used in the above
+example.
+
+- insertion_type: Which of the three possible graphs to create.
+- axis_limits: Setting the (min,max) value of the y-axis.
+- show_legend: Whether the legend is shown or not.
+- show_tooltip: Whether the tooltips are shown or not.
+- background_color: The infill color of the interval.
+- color_main: Color of the point forecast.
+- chart_data: Data for the point forecast.
+- top_band/bottom_band: Data for the upper/lower interval boundaries.
+- labels: The labels displayed on the x-axis.
