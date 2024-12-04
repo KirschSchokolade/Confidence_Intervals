@@ -65,6 +65,7 @@ server <- function(input, output) {
   # This is the simplest way of creating a functioning chart.
   output$simpleChart <- renderConfidenceIntervals({
     ConfidenceIntervals(
+                        element_name = "simpleChart",
                         chart_data = c(10,11,12,13,14,15),
                         labels= c(1,2,3,4,5,6,7,8,9,10))
     
@@ -74,6 +75,7 @@ server <- function(input, output) {
   output$basicChart <- renderConfidenceIntervals({
 
     ConfidenceIntervals(
+                        element_name = "basicChart",
                         main_name = "Sales",
                         chart_data = c(10,11,12,13,14,15),
                         top_band = c(15,16,17,18,19,20),
@@ -83,7 +85,9 @@ server <- function(input, output) {
   
   # A more complex custom chart with many options used.
   output$testchart <- renderConfidenceIntervals({
-    ConfidenceIntervals(insertion_type = "OnlyIntervals",
+    ConfidenceIntervals(
+                        element_name = "testchart",
+                        insertion_type = "OnlyIntervals",
                         axis_limits = c(1,9),
                         show_legend= FALSE,
                         show_tooltip = FALSE,
@@ -100,6 +104,7 @@ server <- function(input, output) {
 
 The following block explains the parameters which were used in the above example.
 
+* element_name: The internal name of the widget. Used as reference for the Shiny.setInputValue() function.
 * insertion_type: Which of the three possible graphs to create.
   + PointForecastFirst: The default option. For each step, first the point forecast is made and then the interval is constructed.
   + OnlyIntervals: Only the intervals are created.

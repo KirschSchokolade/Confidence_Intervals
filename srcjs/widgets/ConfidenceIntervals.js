@@ -20,7 +20,6 @@ HTMLWidgets.widget({
         return {
 
       renderValue: function(x) {
-
     var counter = 0;
     var last_main_value = 0
     let canvas = $(el)
@@ -226,7 +225,7 @@ function return_data_points_to_server(insertion_type){
             "lower_band" : data.datasets[2].data
           }
           console.log(ret)
-          Shiny.setInputValue("foo", ret)
+          Shiny.setInputValue(x.element_name, ret)
       }
         break;
         case 'PointForecastFirst':
@@ -237,7 +236,7 @@ function return_data_points_to_server(insertion_type){
               "lower_band" : data.datasets[2].data
             }
             console.log(ret)
-            Shiny.setInputValue("foo", ret)
+            Shiny.setInputValue(x.element_name, ret)
           }
           break;
         case 'IntervalFirst':
@@ -248,7 +247,7 @@ function return_data_points_to_server(insertion_type){
               "lower_band" : data.datasets[2].data
             }
             console.log(ret)
-            Shiny.setInputValue("foo", ret)
+            Shiny.setInputValue(x.element_name, ret)
            }
           break;
     }
