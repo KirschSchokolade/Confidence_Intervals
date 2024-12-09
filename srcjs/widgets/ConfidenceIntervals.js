@@ -82,6 +82,7 @@ HTMLWidgets.widget({
             const canvasPosition = getRelativePosition(e,this);
             let clicked_value = chart.scales.y.getValueForPixel(canvasPosition.y)
             insert_points(clicked_value, x.insertion_type);
+            console.log("returning data to server:")
             return_data_points_to_server(x.insertion_type)
 
             chart.update()
@@ -213,10 +214,9 @@ function insert_points(clicked_value, insertion_type){
 
 }
 
-function return_data_points_to_server(insertion_type){
+async function return_data_points_to_server(insertion_type){
     // Returns the data points to the server. Each insertion type needs to build its
     // own return object.
-
     switch(insertion_type){
       case 'OnlyIntervals':
         if (data.datasets[2].data.length === label_len){
@@ -224,7 +224,7 @@ function return_data_points_to_server(insertion_type){
             "upper_band" : data.datasets[1].data,
             "lower_band" : data.datasets[2].data
           }
-          console.log(ret)
+          ret = JSON.stringify(ret)
           Shiny.setInputValue(x.element_name, ret)
       }
         break;
@@ -235,7 +235,7 @@ function return_data_points_to_server(insertion_type){
               "upper_band" : data.datasets[1].data,
               "lower_band" : data.datasets[2].data
             }
-            console.log(ret)
+            ret = JSON.stringify(ret)
             Shiny.setInputValue(x.element_name, ret)
           }
           break;
@@ -246,7 +246,7 @@ function return_data_points_to_server(insertion_type){
               "upper_band" : data.datasets[1].data,
               "lower_band" : data.datasets[2].data
             }
-            console.log(ret)
+            ret = JSON.stringify(ret)
             Shiny.setInputValue(x.element_name, ret)
            }
           break;
