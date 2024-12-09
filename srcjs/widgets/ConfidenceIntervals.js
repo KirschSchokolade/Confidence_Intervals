@@ -82,7 +82,6 @@ HTMLWidgets.widget({
             const canvasPosition = getRelativePosition(e,this);
             let clicked_value = chart.scales.y.getValueForPixel(canvasPosition.y)
             insert_points(clicked_value, x.insertion_type);
-            console.log("returning data to server:")
             return_data_points_to_server(x.insertion_type)
 
             chart.update()
