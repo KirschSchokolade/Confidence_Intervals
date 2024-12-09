@@ -213,7 +213,7 @@ function insert_points(clicked_value, insertion_type){
 
 }
 
-async function return_data_points_to_server(insertion_type){
+function return_data_points_to_server(insertion_type){
     // Returns the data points to the server. Each insertion type needs to build its
     // own return object.
     switch(insertion_type){
