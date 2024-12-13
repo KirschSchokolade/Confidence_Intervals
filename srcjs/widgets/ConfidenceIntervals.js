@@ -120,8 +120,8 @@ HTMLWidgets.widget({
                 pan:{
                     enabled: true,
                     modifierKey: 'meta',
-                    threshold: 10,
-                    mode: 'y',
+                    threshold: 5,
+                    mode: 'yx',
                 },
                 zoom: {
                     wheel: {
@@ -131,6 +131,7 @@ HTMLWidgets.widget({
                         enabled: true
                     },
                     mode: 'xy',
+                    scaleMode: 'xy'
                 }
             }
         },
