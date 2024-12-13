@@ -16,7 +16,7 @@
 #' @export
 ConfidenceIntervals <- function(insertion_type = c("PointForecastFirst", "PointForecastFirst", "OnlyIntervals")[1], chart_data, top_band = NULL, bottom_band = NULL,labels = NULL, width = NULL, height = NULL, elementId = NULL, color_main = NULL, color_top = NULL, color_bottom = NULL, show_legend = TRUE,
                               show_tooltip = TRUE, background_color = "#ffffff" , axis_limits = NULL, main_name = "Main", upper_name = "Upper Boundary", lower_name = "Lower Boundary",
-                              element_name)
+                              element_name, enable_zoom = TRUE)
   {
   if (is.null(top_band))
   {
@@ -65,7 +65,8 @@ ConfidenceIntervals <- function(insertion_type = c("PointForecastFirst", "PointF
     main_name = main_name,
     upper_name = upper_name,
     lower_name = lower_name,
-    element_name = element_name
+    element_name = element_name,
+    enable_zoom = enable_zoom
   )
 
   # create widget

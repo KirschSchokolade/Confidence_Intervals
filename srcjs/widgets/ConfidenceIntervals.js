@@ -125,10 +125,10 @@ HTMLWidgets.widget({
                 },
                 zoom: {
                     wheel: {
-                        enabled: true,
+                        enabled: x.enable_zoom
                     },
                     pinch: {
-                        enabled: true
+                        enabled: x.enable_zoom
                     },
                     mode: 'xy',
                     scaleMode: 'xy'
