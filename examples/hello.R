@@ -1,19 +1,18 @@
 library(shiny)
-#library(ConfidenceIntervals)
+library(ConfidenceIntervals)
 library(bslib)
+library('rjson')
 
 ui <- page_fluid(
   titlePanel("Chartjs Widget"),
   mainPanel(
     card(ConfidenceIntervalsOutput("HILF_MIR")),
+    card(verbatimTextOutput("bla")),
     card(ConfidenceIntervalsOutput("basicChart")),
 
-    card(
-      card_header(
-        "This is the most basic chart one can create"
-      ),
-      ConfidenceIntervalsOutput("simpleChart")
-      )
+    card(card_header("This is the most basic chart one can create"),
+        ConfidenceIntervalsOutput("simpleChart")),
+
 
   )
 )
@@ -37,7 +36,11 @@ server <- function(input, output) {
                         color_main = "#E11313", chart_data = c(5,3,5,6), top_band= c(6,6,6,6), bottom_band = c(4,4,4,4), labels= c("Eins", "zwei", "drei", "vier", "sechs", "siebn"),
                         enable_zoom = FALSE)
   })
+  output$bla <- renderText({
 
+    x <-  input$HilfMir
+
+  })
 
 
 
