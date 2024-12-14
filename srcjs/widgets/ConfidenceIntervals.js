@@ -117,6 +117,9 @@ HTMLWidgets.widget({
                 }
             },
             zoom: {
+                                limits: {
+                     y: {min: 1, max: 9},
+                    },
                 pan:{
                     enabled: true,
                     modifierKey: 'meta',
@@ -124,6 +127,9 @@ HTMLWidgets.widget({
                     mode: 'yx',
                 },
                 zoom: {
+                  limits: {
+                     y: {min: 1, max: 9},
+                    },
                     wheel: {
                         enabled: x.enable_zoom
                     },
