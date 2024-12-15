@@ -25,9 +25,9 @@ HTMLWidgets.widget({
     let canvas = $(el)
     let label_len = x.labels.length;
     var old_value = 0;
-
+    let labels = x.labels.map(i => i.toString())
     let data = {
-      labels: x.labels,
+      labels: labels,
       datasets: [
         {
           label: x.main_name,
@@ -71,7 +71,7 @@ HTMLWidgets.widget({
     type: 'line',
     data: data,
     options: {
-        maintainAspectRatio: false,
+        //maintainAspectRatio: false,
         responsive: true,
         onHover: function (e) {
             const point = e.chart.getElementsAtEventForMode(e, 'nearest', {intersect: true}, false)
@@ -117,27 +117,22 @@ HTMLWidgets.widget({
                 }
             },
             zoom: {
-                                limits: {
-                     y: {min: 1, max: 9},
+              limits: {
+                y : {min: x.axis_limits[0], max: x.axis_limits[1], minRange: 5}
+              },
+              pan: {
+                enabled: x.enable_zoom,
+                mode: 'xy',
+              },
+              zoom: {
+                wheel: {
+                  enabled: x.enable_zoom,
+                  //speed: 0.01
                     },
-                pan:{
-                    enabled: true,
-                    modifierKey: 'meta',
-                    threshold: 5,
-                    mode: 'yx',
-                },
-                zoom: {
-                  limits: {
-                     y: {min: 1, max: 9},
+                  pinch: {
+                    enabled: x.enable_zoom
                     },
-                    wheel: {
-                        enabled: x.enable_zoom
-                    },
-                    pinch: {
-                        enabled: x.enable_zoom
-                    },
-                    mode: 'xy',
-                    scaleMode: 'xy'
+                  mode: 'xy',
                 }
             }
         },
@@ -145,9 +140,8 @@ HTMLWidgets.widget({
             y: {
                 // The axis for this scale is determined from the first letter of the id as `'x'`
                 // It is recommended to specify `position` and / or `axis` explicitly.
-                min:x.axis_limits[0],
+                min: x.axis_limits[0],
                 max: x.axis_limits[1],
-                type: 'linear'
             }
         }
     }
