@@ -118,9 +118,11 @@ HTMLWidgets.widget({
             },
             zoom: {
               limits: {
-                y : {min: x.axis_limits[0], max: x.axis_limits[1], minRange: 5}
+                y : {min: x.axis_limits[0], max: x.axis_limits[1], minRange: 5},
+                x: {min: 0, max: label_len }
               },
               pan: {
+                modifierKey: 'meta',
                 enabled: x.enable_zoom,
                 mode: 'xy',
               },
@@ -133,10 +135,23 @@ HTMLWidgets.widget({
                     enabled: x.enable_zoom
                     },
                   mode: 'xy',
+                  scaleMode: 'xy',
                 }
             }
         },
         scales: {
+          x: {
+            type: 'linear',
+            max: label_len,
+            min: 0,
+            ticks: {
+              stepSize: 1,
+              callback: (yValue) => {
+        return Math.floor(yValue); // format to your liking
+              },
+            }
+          },
+
             y: {
                 // The axis for this scale is determined from the first letter of the id as `'x'`
                 // It is recommended to specify `position` and / or `axis` explicitly.
