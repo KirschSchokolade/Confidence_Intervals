@@ -71,7 +71,7 @@ HTMLWidgets.widget({
     type: 'line',
     data: data,
     options: {
-        //maintainAspectRatio: false,
+        maintainAspectRatio: false,
         responsive: true,
         onHover: function (e) {
             const point = e.chart.getElementsAtEventForMode(e, 'nearest', {intersect: true}, false)
