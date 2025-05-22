@@ -44,8 +44,9 @@ ConfidenceIntervals <- function(insertion_type = c("PointForecastFirst", "PointF
   }
   if (is.null(axis_limits))
   {
-    axis_max <- max(unlist(top_band)) * 2
-    axis_min <- min(unlist(bottom_band)) * 0.5
+    data_var <- var(chart_data)
+    axis_max <- max(unlist(top_band)) + 2 * data_var
+    axis_min <- min(unlist(bottom_band)) - 2 * data_var
     axis_limits <- c(axis_min,axis_max)
   }
   # forward options using x
